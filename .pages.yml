@@ -1,0 +1,62 @@
+# Configuration for Pages CMS (app.pagescms.org)
+
+media:
+  input: assets/media
+  output: /assets/media
+
+content:
+  # 1. Manage the Main Site Configuration / Homepage
+  - name: homepage
+    label: Homepage Configuration
+    type: file
+    path: index.html
+    fields:
+      - name: title
+        label: Site Title
+        type: string
+        default: "Satish Law - Legal Research"
+      - name: description
+        label: Meta Description
+        type: string
+        options: 
+          maxlength: 160
+
+  # 2. Manage Legal Articles / Blog Posts (If you add a blog section)
+  - name: articles
+    label: Legal Articles
+    type: collection
+    path: articles
+    filename: "{slug}.md"
+    view:
+      fields: [ title, date ]
+      primary: title
+      sort: [ date, title ]
+    default:
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: Article Title
+        type: string
+        required: true
+      - name: date
+        label: Publish Date
+        type: date
+      - name: author
+        label: Author
+        type: string
+        default: "Satish Law Agency"
+      - name: body
+        label: Content
+        type: rich-text
+
+  # 3. Manage Admin Page Content (Optional)
+  - name: admin_page
+    label: Admin Upload Page
+    type: file
+    path: admin.html
+    fields:
+      - name: title
+        label: Page Title
+        type: string
+        default: "Admin - Upload Judgment"
