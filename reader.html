@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Judgment Reader - Satish Law Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .highlight { background-color: #fef08a; padding: 2px; border-radius: 2px; }
+        .reader-text { font-family: 'Georgia', serif; font-size: 1.1rem; line-height: 1.8; }
+        .dark-mode { background-color: #1a202c; color: #e2e8f0; }
+        .dark-mode .bg-white { background-color: #2d3748; border-color: #4a5568; }
+        .dark-mode .text-gray-800 { color: #f7fafc; }
+        .dark-mode .text-gray-600 { color: #a0aec0; }
+        .dark-mode header { border-color: #4a5568; background-color: #2d3748; }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans h-screen flex flex-col" id="bodyElement">
+    <!-- Reader Toolbar -->
+    <header class="bg-white border-b border-gray-200 px-6 py-3 flex justify-between items-center shadow-sm shrink-0">
+        <div class="flex items-center gap-4">
+            <a href="index.html" class="text-gray-500 hover:text-blue-600 transition"><i class="fas fa-arrow-left text-xl"></i></a>
+            <div>
+                <h1 class="font-bold text-gray-800 text-lg">State of Punjab vs. Principal Secretary</h1>
+                <p class="text-xs text-gray-500">2026 INSC 142 | Supreme Court of India</p>
+            </div>
+        </div>
+        <div class="flex gap-2">
+            <button class="p-2 text-gray-600 hover:bg-gray-100 rounded tooltip" title="Toggle Dark Mode" onclick="toggleDarkMode()">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="p-2 text-gray-600 hover:bg-gray-100 rounded" title="Text Size +">
+                <i class="fas fa-search-plus"></i>
+            </button>
+            <div class="h-6 w-px bg-gray-300 mx-1 my-auto"></div>
+            <button class="bg-purple-100 text-purple-700 hover:bg-purple-200 px-4 py-2 rounded font-medium flex items-center gap-2 border border-purple-200 transition">
+                <i class="fas fa-robot"></i> AI Summary
+            </button>
+            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded font-medium flex items-center gap-2 shadow-sm transition">
+                <i class="fas fa-download"></i> Download PDF
+            </button>
+        </div>
+    </header>
+
+    <div class="flex flex-1 overflow-hidden">
+        <!-- Metadata/Index Sidebar -->
+        <div class="w-80 bg-white border-r border-gray-200 overflow-y-auto p-5 shrink-0 hidden md:block">
+            <h3 class="font-bold text-gray-800 mb-3 border-b pb-2">Case Details</h3>
+            <ul class="space-y-3 text-sm">
+                <li><span class="text-gray-500 block text-xs uppercase">Court</span> <span class="font-medium">Supreme Court of India</span></li>
+                <li><span class="text-gray-500 block text-xs uppercase">Date of Judgment</span> <span class="font-medium">May 10, 2026</span></li>
+                <li><span class="text-gray-500 block text-xs uppercase">Bench</span> <span class="font-medium">Justice A, Justice B</span></li>
+                <li><span class="text-gray-500 block text-xs uppercase">Acts Referred</span> 
+                    <div class="flex flex-wrap gap-1 mt-1">
+                        <span class="bg-blue-50 text-blue-700 border border-blue-100 px-2 py-0.5 rounded text-xs cursor-pointer hover:bg-blue-100">Constitution: Art 21</span>
+                        <span class="bg-blue-50 text-blue-700 border border-blue-100 px-2 py-0.5 rounded text-xs cursor-pointer hover:bg-blue-100">CrPC: Sec 439</span>
+                    </div>
+                </li>
+            </ul>
+
+            <h3 class="font-bold text-gray-800 mt-6 mb-3 border-b pb-2">Citations Matrix</h3>
+            <div class="space-y-2 text-sm">
+                <div class="flex justify-between items-center"><span class="text-gray-600">Cases Referred</span> <span class="bg-gray-100 text-gray-800 px-2 rounded-full text-xs">12</span></div>
+                <div class="flex justify-between items-center"><span class="text-gray-600">Cases Overruled</span> <span class="bg-red-100 text-red-800 px-2 rounded-full text-xs">1</span></div>
+                <div class="flex justify-between items-center"><span class="text-gray-600">Subsequent Citations</span> <span class="bg-green-100 text-green-800 px-2 rounded-full text-xs">0</span></div>
+            </div>
+        </div>
+
+        <!-- Document Viewer Area -->
+        <div class="flex-1 overflow-y-auto bg-gray-100 p-4 md:p-8 flex justify-center">
+            <div class="bg-white max-w-4xl w-full p-8 md:p-12 shadow-md rounded border border-gray-200">
+
+                <div class="text-center mb-10 border-b border-gray-300 pb-8">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Emblem_of_India.svg/100px-Emblem_of_India.svg.png" class="h-16 mx-auto mb-4 opacity-80" alt="Emblem">
+                    <h2 class="text-xl font-bold uppercase tracking-wider mb-2">In The Supreme Court Of India</h2>
+                    <h3 class="text-lg mb-1">Criminal Appellate Jurisdiction</h3>
+                    <p class="font-medium text-gray-600 mb-4">Criminal Appeal No. 1234 of 2026</p>
+
+                    <div class="flex justify-between items-end mt-8 text-left">
+                        <div class="w-5/12 font-bold text-lg">State of Punjab<br><span class="text-sm font-normal text-gray-500">...Appellant</span></div>
+                        <div class="w-2/12 text-center italic text-gray-500">Versus</div>
+                        <div class="w-5/12 text-right font-bold text-lg">Principal Secretary & Ors.<br><span class="text-sm font-normal text-gray-500">...Respondents</span></div>
+                    </div>
+                </div>
+
+                <div class="reader-text text-gray-800 space-y-6 text-justify">
+                    <h4 class="font-bold text-center text-xl mb-6">J U D G M E N T</h4>
+
+                    <p><span class="float-left font-bold text-2xl mr-2 mt-1">1.</span> This appeal is directed against the judgment and order dated 15.01.2025 passed by the High Court of Punjab and Haryana at Chandigarh, whereby the High Court has quashed the proceedings initiated against the respondents under the Prevention of Corruption Act.</p>
+
+                    <p><span class="font-bold mr-2">2.</span> The core legal issue before us pertains to the interpretation of the right to speedy trial enshrined under <span class="highlight cursor-pointer" title="Click to view Bare Act">Article 21 of the Constitution of India</span> in the context of complex economic offences where investigation is voluminous.</p>
+
+                    <p><span class="font-bold mr-2">3.</span> The factual matrix, shorn of unnecessary details, reveals that the FIR was registered on 10.04.2015. Over a decade has passed without charges being framed...</p>
+
+                    <div class="p-6 bg-blue-50 border-l-4 border-blue-500 my-6 rounded-r italic">
+                        "The constitutional guarantee of speedy trial is an integral part of the fundamental right to life and liberty. However, what constitutes 'delay' must be evaluated on a case-to-case basis, factoring in the systemic complexities of prosecuting economic offences."
+                    </div>
+
+                    <p><span class="font-bold mr-2">4.</span> We have heard the learned Additional Solicitor General for the Appellant State, and the learned Senior Counsel appearing on behalf of the respondents.</p>
+
+                    <p><span class="font-bold mr-2">5.</span> Consequent to our analysis, we uphold the decision of the High Court. The appeal is accordingly dismissed. Pending applications, if any, shall stand disposed of.</p>
+                </div>
+
+                <div class="mt-16 pt-8 border-t border-gray-300 text-right font-bold">
+                    <p>.......................................J.</p>
+                    <p class="text-sm font-normal mb-6">[JUSTICE A]</p>
+                    <p>.......................................J.</p>
+                    <p class="text-sm font-normal">[JUSTICE B]</p>
+                    <p class="text-left mt-8 text-sm text-gray-500">New Delhi;<br>May 10, 2026.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDarkMode() {
+            document.getElementById('bodyElement').classList.toggle('dark-mode');
+        }
+    </script>
+</body>
+</html>
